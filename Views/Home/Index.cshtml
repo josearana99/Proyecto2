@@ -1,0 +1,16 @@
+﻿@model Poryecto2AVL.viewModels.IndexViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="postedFile" />
+    <input type="submit" value="Importar" />
+}
+<ul>
+    @foreach (var medicamento in Model.Medicamentos)
+    {
+        <li>@medicamento.id_medicamento-@medicamento.nombre</li>
+    }
+</ul>
